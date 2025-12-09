@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProTypes from "prop-types";
 
 const containerStyle = {
   display: "flex",
@@ -8,6 +9,16 @@ const containerStyle = {
 
 const starContainerStyle = {
   display: "flex",
+};
+
+StarRating.propTypes = {
+  maxRating: ProTypes.number,
+  color: ProTypes.string,
+  size: ProTypes.number,
+  className: ProTypes.string,
+  messages: ProTypes.arrayOf(ProTypes.string),
+  defaultRating: ProTypes.number,
+  onSetRate: ProTypes.func,
 };
 
 export default function StarRating({
@@ -98,5 +109,15 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
         </svg>
       )}
     </span>
+  );
+}
+
+function Test() {
+  const [movieRating, setMovieRating] = useState(0);
+  return (
+    <div>
+      <StarRating maxRating={8} color="green" onSetRate={setMovieRating} />
+      <p>This movie was rated {movieRating} stars</p>
+    </div>
   );
 }

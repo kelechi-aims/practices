@@ -1,23 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import StarRating from "./StarRating";
+import TextExpanderComp from "./TextExpander";
+import "./style.css";
 // import "./index.css";
 // import App from "./App";
 
-function Test() {
-  const [movieRating, setMovieRating] = React.useState(0);
-  return (
-    <div>
-      <StarRating maxRating={8} color="green" onSetRate={setMovieRating} />
-      <p>This movie was rated {movieRating} stars</p>
-    </div>
-  );
-}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <StarRating
+
+    {/* <StarRating
       maxRating={7}
       messages={[
         "Terrible",
@@ -36,6 +30,8 @@ root.render(
       className="test"
       defaultRating={3}
     />
-    <Test />
+    <Test /> */}
+
+    <TextExpanderComp />
   </React.StrictMode>
 );
