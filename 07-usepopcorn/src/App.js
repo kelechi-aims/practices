@@ -50,8 +50,14 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
+const KEY = "b193b3f6";
+
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
+
+  fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=batman`)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 
   return (
     <>

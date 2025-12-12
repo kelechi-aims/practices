@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import StarRating from "./StarRating";
-import TextExpanderComp from "./TextExpander";
+// import StarRating from "./StarRating";
+// import TextExpanderComp from "./TextExpander";
 import "./style.css";
-// import "./index.css";
-// import App from "./App";
+import "./index.css";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
 
     {/* <StarRating
       maxRating={7}
@@ -32,6 +32,6 @@ root.render(
     />
     <Test /> */}
 
-    <TextExpanderComp />
+    {/* <TextExpanderComp /> */}
   </React.StrictMode>
 );
