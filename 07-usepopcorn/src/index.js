@@ -5,11 +5,13 @@ import ReactDOM from "react-dom/client";
 import "./style.css";
 import "./index.css";
 import App from "./App";
+// import CurrencyConverter from "./CurrencyConverter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
+    {/* <CurrencyConverter /> */}
 
     {/* <StarRating
       maxRating={7}

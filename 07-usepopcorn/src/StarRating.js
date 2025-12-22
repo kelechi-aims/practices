@@ -1,16 +1,19 @@
 import { useState } from "react";
 import ProTypes from "prop-types";
 
+// Styles for the component container
 const containerStyle = {
   display: "flex",
   alignItems: "center",
   gap: "16px",
 };
 
+// Styles for the star container
 const starContainerStyle = {
   display: "flex",
 };
 
+// Prop type validation for the StarRating component
 StarRating.propTypes = {
   maxRating: ProTypes.number,
   color: ProTypes.string,
@@ -21,25 +24,27 @@ StarRating.propTypes = {
   onSetRate: ProTypes.func,
 };
 
+// StarRating component definition
 export default function StarRating({
-  maxRating = 5,
-  color = "#fcc419",
-  size = 48,
-  className = "",
-  messages = [],
-  defaultRating = 0,
-  onSetRate,
+  maxRating = 5, // Maximum number of stars
+  color = "#fcc419", // Color of the stars
+  size = 48, // Size of each star
+  className = "", // Additional CSS class for the container
+  messages = [], // Messages corresponding to each rating
+  defaultRating = 0, // Default rating value
+  onSetRate, // Callback function when rating is set
 }) {
-  const [rating, setRating] = useState(defaultRating);
-  const [tempRating, setTempRating] = useState(0);
+  const [rating, setRating] = useState(defaultRating); // State to hold the current rating
+  const [tempRating, setTempRating] = useState(0); // State for temporary rating on hover
 
+  // Styles for the text displaying the rating message or value
   const textStyle = {
     lineHeight: "1",
     margin: "0",
     color,
     fontSize: `${size / 1.5}px`,
   };
-
+  // Function to handle rating selection
   const handleRating = (rating) => {
     setRating(rating);
     if (onSetRate) onSetRate(rating);
@@ -69,6 +74,7 @@ export default function StarRating({
   );
 }
 
+// Star component definition
 function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   const starStyle = {
     width: `${size}px`,
@@ -112,6 +118,7 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   );
 }
 
+// Test component to demonstrate the StarRating component
 function Test() {
   const [movieRating, setMovieRating] = useState(0);
   return (
